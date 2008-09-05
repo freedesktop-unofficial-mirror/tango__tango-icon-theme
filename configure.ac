@@ -28,14 +28,15 @@ AC_SUBST(ACLOCAL_AMFLAGS, "\${ACLOCAL_FLAGS}")
 AC_SUBST(themedir, "\${datadir}/icons/Tango")
 
 # Icon sizes we want to install
-AC_SUBST([icon_sizes], [8x8 16x16 22x22 32x32 48x48])
+AC_SUBST([render_sizes], ["8x8 16x16 22x22 32x32 48x48"])
+AC_SUBST([require_sizes], ["16x16 22x22 32x32 48x48"])
 
 # Allow icon mapping to be disabled
 AC_ARG_ENABLE([icon-mapping],
 	AC_HELP_STRING([--enable-icon-mapping],
 			[Enable compatibility symlinks [default=auto]]),
-	enable_mapping=$enableval,
-	enable_mapping=yes)
+	[enable_mapping=$enableval],
+	[enable_mapping=yes])
 
 ICONMAP="true"
 if test "x$enable_mapping" != "xno"; then
@@ -57,9 +58,17 @@ fi
 AC_SUBST(ICONMAP)
 
 # PERL and Inkscape for render-pixmaps.pl
+if test -x autogen.sh; then
+   try_render=yes
+else
+   try_render=no
+fi
+
 AC_ARG_ENABLE([rendering],
-	AC_HELP_STRING([--disable-rendering], [disable icon rendering]),
-	[enable_rendering=$enableval], [enable_rendering=yes])
+	AC_HELP_STRING([--eanble-rendering],
+			[Enable icon rendering [default=auto]]),
+	[enable_rendering=$enableval],
+	[enable_rendering=$try_render])
 
 if test "x$enable_rendering" = "xyes"; then
    AC_PATH_PROG([INKSCAPE], [inkscape])

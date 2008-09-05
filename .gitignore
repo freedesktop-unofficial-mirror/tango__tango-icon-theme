@@ -8,13 +8,7 @@ Makefile.in
 aclocal.m4
 autom4te-2.5x.cache
 autom4te.cache
-config.cache
-config.guess
-config.h
-config.h.in
-config.log
-config.status
-config.sub
+config.*
 configure
 install-sh
 intl
@@ -27,3 +21,9 @@ stamp-h*
 ltmain.sh
 render-bitmaps.pl
 
+8x8
+16x16
+22x22
+32x32
+48x48
+256x256
