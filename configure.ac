@@ -10,6 +10,17 @@ AM_INIT_AUTOMAKE([1.9 tar-ustar])
 PKG_PROG_PKG_CONFIG([0.19])
 IT_PROG_INTLTOOL([0.40.0])
 
+GETTEXT_PACKAGE="${PACKAGE}"
+AC_SUBST(GETTEXT_PACKAGE)
+
+ALL_LINGUAS=""
+AM_GLIB_GNU_GETTEXT
+
+# AM_GLIB_GNU_GETTEXT above subst. $DATADIRNAME
+# this is the directory where the *.{mo,gmo} files are installed
+localedir='${prefix}/${DATADIRNAME}/locale'
+AC_SUBST(localedir)
+
 # Workaround to make aclocal get the right flags
 AC_SUBST(ACLOCAL_AMFLAGS, "\${ACLOCAL_FLAGS}")
 
