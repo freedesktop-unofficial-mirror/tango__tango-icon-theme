@@ -1,60 +1,58 @@
 
-icon_in_files = $(shell for i in `find . -name "*.svg"`; do printf "$$i "; done)
-icon_files = $(icon_in_files:.svg=.png)
+icon_in_files = $(shell SRCDIR="$(srcdir)"; for i in `find $$SRCDIR -name "*.svg"`; do printf "$$i "; done)
+icon_cache = $(icon_in_files:.svg=.rendercache)
+icon_files = $(shell BUILDDIR="$(builddir)"; for i in `find $$BUILDDIR -name "*.rendercache"`; do cat $$i; done)
 
 if ENABLE_RENDERING
 $(top_builddir)/render-bitmaps.pl: $(top_srcdir)/render-bitmaps.pl.in
 	(cd $(top_builddir) && make render-bitmaps.pl)
 
-%.png: %.svg $(top_builddir)/render-bitmaps.pl
+%.rendercache: %.svg $(top_builddir)/render-bitmaps.pl
 	for size in $(render_sizes); do \
-		$(top_builddir)/render-bitmaps.pl -s $$size -o $(top_builddir) $<; \
+		$(top_builddir)/render-bitmaps.pl -s $$size -o $(top_builddir) $< > $@; \
 	done
-	touch $@
 
-dist-hook: $(icon_files)
+dist-hook: $(icon_cache)
 	for size in $(render_sizes); do \
 		cp -a $(top_builddir)/$$size $(top_distdir)/$$size; \
 	done
 else
-%.png: %.svg
-	touch $@
+%.rendercache: %.svg
 
-dist-hook: $(icon_files)
+dist-hook: $(icon_cache)
 	for size in $(render_sizes); do \
 		cp -a $(top_srcdir)/$$size $(top_distdir)/$$size; \
 	done
 endif
 
-all: $(icon_files)
-$(render_sizes): $(icon_files)
+all: $(icon_cache)
+$(render_sizes): $(icon_cache)
 
 install-data-local:
 	for size in $(render_sizes); do \
-		for file in $(icon_files); do \
-			for dir in `find $(top_srcdir)/$$size/* -type d`; do \
-				context="`basename $$dir`"; \
+		for dir in `if [ -d $(top_srcdir)/$$size ]; then find $(top_srcdir)/$$size/* -type d; fi`; do \
+			for file in $(icon_files); do \
+				context="`dirname $$file`"; \
 				$(mkdir_p) $(DESTDIR)$(themedir)/$$size/$$context; \
-				$(install_sh_DATA) $(top_srcdir)/$$size/$$context/$$file $(DESTDIR)$(themedir)/$$size/$$context/$$file; \
+				$(install_sh_DATA) $(top_srcdir)/$$size/$$file $(DESTDIR)$(themedir)/$$size/$$file; \
 			done; \
 		done; \
 	done
 
 uninstall-local:
 	for size in $(render_sizes); do \
-		for file in $(icon_files); do \
-			for dir in `find $(top_srcdir)/$$size/* -type d`; do \
-				context="`basename $$dir`"; \
-				rm -f $(DESTDIR)$(themedir)/$$size/$$context/$$file; \
+		for dir in `if [ -d $(top_srcdir)/$$size ]; then find $(top_srcdir)/$$size/* -type d; fi`; do \
+			for file in $(icon_files); do \
+				rm -f $(DESTDIR)$(themedir)/$$size/$$file; \
 			done; \
 		done; \
 	done
 
 EXTRA_DIST =			\
-	$(icon_in_files)
+	$(icon_in_files)	\
+	$(icon_cache)
 
-CLEANFILES =			\
-	$(icon_files)
 
 MAINTAINERCLEANFILES =		\
-	Makefile.in
+	Makefile.in		\
+	$(icon_cache)

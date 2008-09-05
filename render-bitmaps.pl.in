@@ -64,7 +64,7 @@ sub render_icons {
 			    system ("mkdir -p $dir");
 			}
 			my $cmd = "$inkscape -i $box->{id} -e $dir/$name.png $filename > /dev/null";
-                        print "Rendering $dir/$name.png...\n";
+                        print "$context/$name.png\n";
 			system ($cmd);
 		    }
 		}
