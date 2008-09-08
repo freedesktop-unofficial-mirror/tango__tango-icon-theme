@@ -32,11 +32,11 @@ use Data::Dumper;
 sub render_icons {
     my $filename = shift;
 
-    my $mapping = XML::Simple::XMLin ($filename,
+    my $svgdata = XML::Simple::XMLin ($filename,
 				      keyattr => [ qw() ],
 				      forcearray => [ qw(g rect text) ]);
 
-    foreach my $icon (@{$mapping->{g}}) {
+    foreach my $icon (@{$svgdata->{g}}) {
 	my $name;
 	my $context;
 
@@ -44,6 +44,16 @@ sub render_icons {
 	    if (defined $plate->{'inkscape:label'} &&
 		$plate->{'inkscape:label'} =~ m/plate(.*)/) {
 
+                # Error out if the 'plate' layer is visible
+                # This is to prevent background squares from appearing
+                # inside the rendered PNG files
+                if (defined $plate->{style} &&
+                    $plate->{style} ne "display:none") {
+                    die "ERROR: $filename: Plate layer not hidden.\n";
+                }
+
+                # Get the icon's name and context so we can render it
+                # in the right location on disk
 		foreach my $text (@{$plate->{text}}) {
 		    if (defined $text->{'inkscape:label'} &&
 			$text->{'inkscape:label'} eq "icon-name") {
@@ -53,17 +63,27 @@ sub render_icons {
 			$context = $text->{tspan}->{content};
 		    }
 		}
+
+                # Grab the rectangle inside the plate and tell
+                # Inkscape to render the area to our PNG file
 		foreach my $box (@{$plate->{rect}}) {
 		    if (defined $box->{'inkscape:label'}) {
 			my $size = $box->{'inkscape:label'};
 			my $dir = "$outdir/$size/$context";
 
+                        # Skip this box if the size isn't the requested size
                         next if (defined $sizeonly && $size ne $sizeonly);
 
 			if (! -d $dir) {
 			    system ("mkdir -p $dir");
 			}
+
+                        # Only redirect STDOUT as STDERR is useful here
 			my $cmd = "$inkscape -i $box->{id} -e $dir/$name.png $filename > /dev/null";
+
+                        # Print the context/name.png string to STDOUT
+                        # We are doing this until a better cache method can
+                        # be implemented, to avoid having to use redirection
                         print "$context/$name.png\n";
 			system ($cmd);
 		    }
