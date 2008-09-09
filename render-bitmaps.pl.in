@@ -27,7 +27,7 @@ GetOptions ("size|s=s" => \$sizeonly,
 
 ############################################################################
 
-use Data::Dumper;
+$outdir =~ s|[/]?$|/|g if ($outdir ne "");
 
 sub render_icons {
     my $filename = shift;
@@ -69,7 +69,7 @@ sub render_icons {
 		foreach my $box (@{$plate->{rect}}) {
 		    if (defined $box->{'inkscape:label'}) {
 			my $size = $box->{'inkscape:label'};
-			my $dir = "$outdir/$size/$context";
+			my $dir = "$outdir$size/$context";
 
                         # Skip this box if the size isn't the requested size
                         next if (defined $sizeonly && $size ne $sizeonly);
