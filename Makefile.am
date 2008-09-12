@@ -5,16 +5,17 @@ SUBDIRS = po svg
 theme_in_files = index.theme.in.in
 theme_DATA = $(theme_in_files:.theme.in.in=.theme)
 
-THEME_DIRS=$(shell SIZES="$(icon_sizes)"; for size in $$SIZES; do for dir in `find $$size/* -type d`; do printf "$$dir,"; done; done | sed -e "s/,$$//g")
+THEME_DIRS=$(shell SIZES="$(render_sizes)"; for size in $$SIZES; do for dir in `find $$size/* -type d`; do printf "$$dir,"; done; done | sed -e "s/,$$//g")
 
-%.theme.in: %.theme.in.in
-	for size in $(icon_sizes); do \
+%.theme.in: %.theme.in.in Makefile
+	for size in $(render_sizes); do \
 		make -C svg $$size; \
 	done
 	dirs="$(THEME_DIRS)"; \
 	sed -e "s|\@THEME_DIRS\@|$$dirs|g" < $< > $@; \
 	for dir in `echo $$dirs | sed -e "s/,/ /g"`; do \
-		size="`dirname $$dir`"; \
+		sizefull="`dirname $$dir`"; \
+		size="`echo $$sizefull | sed -e 's/x.*$$//g'`"; \
 		context="`basename $$dir`"; \
 		echo "[$$dir]" >> $@; \
 		echo "Size=$$size" >> $@; \
@@ -38,6 +39,9 @@ THEME_DIRS=$(shell SIZES="$(icon_sizes)"; for size in $$SIZES; do for dir in `fi
 		fi; \
 		if test "$$context" = "emotes"; then \
 			echo "Context=Emotes" >> $@; \
+		fi; \
+		if test "$$context" = "intl"; then \
+			echo "Context=International" >> $@; \
 		fi; \
 		if test "$$context" = "mimetypes"; then \
 			echo "Context=MimeTypes" >> $@; \
