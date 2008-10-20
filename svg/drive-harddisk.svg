@@ -25,6 +25,13 @@
      id="title15719">Hard Drive</title>
   <defs
      id="defs3">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 150 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="400 : 150 : 1"
+       inkscape:persp3d-origin="200 : 100 : 1"
+       id="perspective9582" />
     <linearGradient
        inkscape:collect="always"
        id="linearGradient10660">
@@ -1991,9 +1998,9 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="109.40787"
+     inkscape:cx="-32.59213"
      inkscape:cy="79.730024"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer3"
      showgrid="false"
      inkscape:grid-bbox="true"
      inkscape:document-units="px"
@@ -2076,8 +2083,7 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="plate"
-     style="display:none"
-     sodipodi:insensitive="true">
+     style="display:none">
     <rect
        style="fill:#eeeeec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        id="rect6282"
@@ -2126,6 +2132,29 @@
        x="301.95709"
        y="165.95343"
        inkscape:label="24x24" />
+    <text
+       xml:space="preserve"
+       style="font-size:18.30070686px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Bitstream Vera Sans"
+       x="20.970737"
+       y="7.5136185"
+       id="context"
+       inkscape:label="context"><tspan
+         sodipodi:role="line"
+         id="tspan2716"
+         x="20.970737"
+         y="7.5136185">devices</tspan></text>
+    <text
+       inkscape:label="icon-name"
+       id="text3021"
+       y="7.5136185"
+       x="191.97073"
+       style="font-size:18.30070686px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Droid Sans;-inkscape-font-specification:Droid Sans Bold"
+       xml:space="preserve"
+       sodipodi:linespacing="125%"><tspan
+         y="7.5136185"
+         x="191.97073"
+         id="tspan3023"
+         sodipodi:role="line">drive-harddisk</tspan></text>
   </g>
   <g
      id="layer1"
