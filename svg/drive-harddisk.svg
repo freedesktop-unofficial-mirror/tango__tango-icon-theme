@@ -25,6 +25,13 @@
      id="title15719">Hard Drive</title>
   <defs
      id="defs3">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 150 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="500 : 150 : 1"
+       inkscape:persp3d-origin="250 : 100 : 1"
+       id="perspective645" />
     <linearGradient
        id="linearGradient4016"
        inkscape:collect="always">
@@ -2348,7 +2355,7 @@
      inkscape:zoom="1"
      inkscape:cx="368.45261"
      inkscape:cy="113.16218"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer3"
      showgrid="false"
      inkscape:grid-bbox="true"
      inkscape:document-units="px"
@@ -2430,87 +2437,87 @@
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:groupmode="layer"
-     id="layer3"
-     inkscape:label="plate 0"
-     style="display:none">
-    <rect
-       style="fill:#eeeeec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-       id="rect6282"
-       width="256"
-       height="256"
-       x="20"
-       y="36"
-       inkscape:label="256x256" />
-    <rect
-       inkscape:label="48x48"
-       y="55.99633"
-       x="296.0625"
-       height="48"
-       width="48"
-       id="rect6284"
-       style="fill:#eeeeec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
-    <rect
-       style="fill:#eeeeec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-       id="rect6592"
-       width="32"
-       height="32"
-       x="303"
-       y="131.99634"
-       inkscape:label="32x32" />
-    <rect
-       inkscape:label="22x22"
-       y="183.05884"
-       x="303"
-       height="22"
-       width="22"
-       id="rect6749"
-       style="fill:#eeeeec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
-    <rect
-       style="fill:#eeeeec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-       id="rect6833"
-       width="16"
-       height="16"
-       x="303"
-       y="225"
-       inkscape:label="16x16" />
-    <rect
-       style="fill:#eeeeec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-       id="rect5028"
-       width="24"
-       height="24"
-       x="301.95709"
-       y="181.95343"
-       inkscape:label="24x24" />
-    <text
-       xml:space="preserve"
-       style="font-size:18.30070686px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Bitstream Vera Sans"
-       x="20.970737"
-       y="23.513618"
-       id="context"
-       inkscape:label="context"><tspan
-         sodipodi:role="line"
-         id="tspan2716"
-         x="20.970737"
-         y="23.513618">devices</tspan></text>
-    <text
-       inkscape:label="icon-name"
-       id="text3021"
-       y="23.513618"
-       x="191.97073"
-       style="font-size:18.30070686px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Droid Sans;-inkscape-font-specification:Droid Sans Bold"
-       xml:space="preserve"
-       sodipodi:linespacing="125%"><tspan
-         y="23.513618"
-         x="191.97073"
-         id="tspan3023"
-         sodipodi:role="line">drive-harddisk</tspan></text>
-  </g>
-  <g
      id="layer1"
      inkscape:label="artwork:drive-harddisk"
      inkscape:groupmode="layer"
      style="display:inline">
+    <g
+       inkscape:groupmode="layer"
+       id="layer3"
+       inkscape:label="plate 0"
+       style="display:none">
+      <rect
+         style="fill:#eeeeec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         id="rect6282"
+         width="256"
+         height="256"
+         x="20"
+         y="36"
+         inkscape:label="256x256" />
+      <rect
+         inkscape:label="48x48"
+         y="55.99633"
+         x="296.0625"
+         height="48"
+         width="48"
+         id="rect6284"
+         style="fill:#eeeeec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <rect
+         style="fill:#eeeeec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         id="rect6592"
+         width="32"
+         height="32"
+         x="303"
+         y="131.99634"
+         inkscape:label="32x32" />
+      <rect
+         inkscape:label="22x22"
+         y="183.05884"
+         x="303"
+         height="22"
+         width="22"
+         id="rect6749"
+         style="fill:#eeeeec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <rect
+         style="fill:#eeeeec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         id="rect6833"
+         width="16"
+         height="16"
+         x="303"
+         y="225"
+         inkscape:label="16x16" />
+      <rect
+         style="fill:#eeeeec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         id="rect5028"
+         width="24"
+         height="24"
+         x="301.95709"
+         y="181.95343"
+         inkscape:label="24x24" />
+      <text
+         xml:space="preserve"
+         style="font-size:18.30070686px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Bitstream Vera Sans"
+         x="20.970737"
+         y="23.513618"
+         id="context"
+         inkscape:label="context"><tspan
+           sodipodi:role="line"
+           id="tspan2716"
+           x="20.970737"
+           y="23.513618">devices</tspan></text>
+      <text
+         inkscape:label="icon-name"
+         id="text3021"
+         y="23.513618"
+         x="191.97073"
+         style="font-size:18.30070686px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;enable-background:new;font-family:Droid Sans;-inkscape-font-specification:Droid Sans Bold"
+         xml:space="preserve"
+         sodipodi:linespacing="125%"><tspan
+           y="23.513618"
+           x="191.97073"
+           id="tspan3023"
+           sodipodi:role="line">drive-harddisk</tspan></text>
+    </g>
     <rect
        style="fill:#eeeeec;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:none;overflow:visible;enable-background:accumulate"
        id="256x256"
@@ -3983,7 +3990,7 @@
     </g>
     <path
        sodipodi:type="arc"
-       style="enable-background:new;display:inline;opacity:0.26086957999999999;fill:url(#radialGradient4002);fill-opacity:1;stroke:none;stroke-width:0.80000000999999998;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:0.26086958;fill:url(#radialGradient4002);fill-opacity:1;stroke:none;stroke-width:0.80000001;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline;enable-background:new"
        id="path4000"
        sodipodi:cx="378.9375"
        sodipodi:cy="144.8125"
@@ -4006,7 +4013,7 @@
          d="M 402.01562,186 L 402.03125,190.5 C 402.03122,190.77613 401.80738,190.99997 401.53125,191 L 397.03125,191 L 397,191.75 L 404,198.84375 L 404,186 L 402.01562,186 z"
          style="opacity:1;fill:#ef2929;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline;enable-background:new" />
       <path
-         style="opacity:0.36086957;fill:url(#linearGradient4012);fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline;enable-background:new"
+         style="opacity:0.36086958;fill:url(#linearGradient4012);fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline;enable-background:new"
          d="M 437.03125,137 L 437,137 L 437.01562,141.44531 C 437.01559,141.72144 436.80738,141.99997 436.53125,142 L 432.03125,142 L 432,142.75 L 439.03125,149.875 L 446,142.78125 L 446,142 L 441.5,142 C 441.22387,141.99997 441.00003,141.77613 441,141.5 L 441,137 L 437.03125,137 z M 438,138 L 440.03125,138 L 440.03125,141.5 C 440.03133,142.31113 440.68887,142.96867 441.5,142.96875 L 444.21875,142.96875 L 439.03125,148.59375 L 433.8125,142.96875 L 436.53125,142.96875 C 437.34238,142.96867 437.99992,142.31113 438,141.5 L 438,138 z"
          transform="translate(-35,49)"
          id="path3970"
